@@ -2,3 +2,4 @@ config.php
 vendor/
 .DS_Store
 composer.phar
+README.md

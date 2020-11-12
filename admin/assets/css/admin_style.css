@@ -1,0 +1,15 @@
+/* IMPORTATION */
+@import "admin_reset.css";
+
+/* CSS START */
+body {
+  font-family: 'ubuntu';
+  font-size: 16px;
+}
+
+/* RESPONSIVE START */
+@media screen and (min-width: 900px) {
+  
+}
+
+/* CSS END */

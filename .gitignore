@@ -3,3 +3,4 @@ vendor/
 .DS_Store
 composer.phar
 README.md
+inc/pdo.php

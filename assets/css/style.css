@@ -93,6 +93,7 @@ hr {
 }
 #header nav ul li a.connexion:hover {
   background-color: #5abf55;
+  border: 2px #5abf55 solid;
   color: white;
   opacity: 1;
 }
@@ -105,9 +106,9 @@ hr {
   max-width: 900px;
   margin: 0 auto;
   position: absolute;
-  top: 330px;
-  left: 0;
-  right: 0;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 #content .info h1.info-title {
@@ -168,7 +169,6 @@ hr {
   transition: .2s;
 }
 #footer .footer-info .social ul li a:hover {
-  font-size: 2.2em;
   color: #5abf55;
 }
 #footer .footer-info .navigation-footer nav ul {
@@ -183,7 +183,6 @@ hr {
   font-weight: 500;
   font-size: 1.1em;
   transition: .2s;
-  border-radius: 20px;
 }
 #footer .footer-info .navigation-footer nav ul li a:hover {
   opacity: .7;

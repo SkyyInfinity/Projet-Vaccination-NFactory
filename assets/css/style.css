@@ -26,12 +26,40 @@ a.btn:hover {
   background-color: #5abf55;
   border: 2px #5abf55 solid;
 }
+.btn-contrast {
+  background-color: #474441;
+  border: 2px #474441 solid;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: .2s;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: .2s;
+}
+.btn-contrast:hover {
+  background-color: #615d59;
+  border: 2px #615d59 solid;
+  color: white;
+}
 hr {
   border: none;
   background-color: white;
   height: 5px;
   margin: 40px 40%;
 }
+h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  margin:  0 0 5% 0;
+}
+h2 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+}
+/* HEADER */
 #header {
   background-color: #fff;
   padding: 15px 0 10px 0;
@@ -97,6 +125,8 @@ hr {
   color: white;
   opacity: 1;
 }
+
+/* ACCUEIL */
 #content .hero img {
   width: 100%;
   position: relative;
@@ -110,11 +140,6 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-}
-#content .info h1.info-title {
-  color: white;
-  font-size: 3em;
-  margin:  0 0 5% 0;
 }
 #content .info a.info-btn {
   font-size: 1.6em;
@@ -134,9 +159,45 @@ hr {
   font-size: 1.5em;
   line-height: 1.5em;
 }
+/* INSCRIPTION / CONNEXION */
+#content .inscription-content {
+  background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+  padding-top: 7%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+form input[type="text"], input[type="email"], input[type="password"] {
+  padding: 1%;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2em;
+  margin: 0.5% 0;
+  width: 31%;
+  transition: .2s;
+}
+form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+form input[type="submit"] {
+  outline: none;
+  cursor: pointer;
+  margin-top: 1%;
+}
+form span {
+  display: block;
+  color: chocolate;
+}
+#content .inscription-content .nom-prenom span {
+  display: inline-block;
+}
+
+/* FOOTER */
 #footer {
   background-color: #fff;
-  padding: 20px 0 25px 0;
+  padding-top: 30px;
   position: relative;
   color: #474441;
 }
@@ -144,15 +205,12 @@ hr {
   width: 100%;
   height: 5px;
   background-image: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
 }
 #footer .footer-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 #footer .footer-info .social ul.social-links {
@@ -227,6 +285,7 @@ hr {
 }
 #footer p.copyright {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 /* RESPONSIVE START */
@@ -243,8 +302,9 @@ hr {
   #content .section-explications {
     padding: 65px 3%;
   }
-  #footer {
-    padding: 30px 2% 35px 2%;
+  #footer .footer-info{
+    padding-left: 2%;
+    padding-right: 2%;
   }
 }
 @media screen and (max-width: 1360px) {

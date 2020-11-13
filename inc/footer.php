@@ -27,6 +27,7 @@
                         </nav>
                     </div>
                     <div class="social">
+                        <p>Suivez-nous !</p>
                         <ul class="social-links">
                             <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>

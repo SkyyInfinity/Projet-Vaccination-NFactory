@@ -168,6 +168,14 @@ hr {
   color: #69e063;
   transition: .2s;
 }
+#footer .footer-info .social p {
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  margin: 10px 0 20px 0;
+}
 #footer .footer-info .social ul li a:hover {
   color: #5abf55;
 }
@@ -222,7 +230,29 @@ hr {
 }
 
 /* RESPONSIVE START */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1550px) {
+  #header nav {
+    justify-content: space-around;
+  }
+  #header nav ul li {
+    margin: 0 10px;
+  }
+  #content img {
+    margin-top: 5%;
+  }
+  #content .section-explications {
+    padding: 65px 3%;
+  }
+  #footer {
+    padding: 30px 2% 35px 2%;
+  }
+}
+@media screen and (max-width: 1360px) {
+  #header nav {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 1200px) {
   #header {
     padding: 25px 0 35px 0;
   }
@@ -240,6 +270,81 @@ hr {
   }
   #header nav ul li {
     margin: 0 10px;
+  }
+  #content .info {
+    padding: 0 3%;
+  }
+  #content .section-explications {
+    padding: 65px 3%;
+    text-align: justify;
+  }
+  #content img {
+    margin-top: 13%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #content img {
+    margin-top: 16%;
+  }
+  #content .info {
+    top: 35%;
+  }
+  #content .info h1.info-title {
+    font-size: 2em;
+  }
+  #content .info a.info-btn {
+    font-size: 1.2em;
+  }
+  #content .section-explications h2 {
+    font-size: 2em;
+  }
+  #content .section-explications p {
+    font-size: 1.2em;
+  }
+  #footer .footer-info {
+    flex-direction: column;
+    justify-content: center;
+  }
+  #footer .footer-info span {
+    display: inline-block;
+  }
+  #footer .footer-info p {
+    text-align: center;
+  }
+  #footer .footer-info .navigation-footer {
+    margin: 2% 0;
+    padding: 30px 0;
+    border-top: 1px #474441 solid;
+    border-bottom: 1px #474441 solid;
+  }
+}
+@media screen and (max-width: 800px) {
+  a.btn {
+    padding: 10px 15px;
+  }
+  #content .info {
+    top: 31%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #content .info h1.info-title {
+    font-size: 1.7em;
+  }
+}
+@media screen and (max-width: 600px) {
+  #content img {
+    margin-top: 25%;
+  }
+  #content .info {
+    top: 30%;
+  }
+  #content .info h1.info-title {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 500px) {
+  #content img {
+    margin-top: 30%;
   }
 }
 

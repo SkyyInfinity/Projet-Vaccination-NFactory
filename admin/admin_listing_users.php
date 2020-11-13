@@ -47,9 +47,12 @@ $users = $query->fetchAll();
     <?php foreach ($users as $user): ?>
       <form class="" action="index.html" method="post">
         <div class="users">
-          <p>Nom: <?php echo $user['nom']; ?><button type="submit" name="" value="1">Modifier</button><button type="submit" name="" value="1">Supprimer</button></p>
-          <p>Nom: <?php echo $user['prenom']; ?><button type="submit" name="" value="2">Modifier</button><button type="submit" name="" value="1">Supprimer</button></p>
-          <p>Nom: <?php echo $user['email']; ?><button type="submit" name="" value="3">Modifier</button><button type="submit" name="" value="1">Supprimer</button></p>
+          <tr>
+            <th>Nom utilisateur</th>
+            <p>Nom: <?php echo $user['nom']; ?></p>
+          </tr>
+          <p>Nom: <?php echo $user['prenom']; ?></p>
+          <p>Nom: <?php echo $user['email']; ?></p>
         </div>
       </form>
       <?php endforeach; ?>

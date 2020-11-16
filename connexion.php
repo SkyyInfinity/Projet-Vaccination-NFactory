@@ -3,47 +3,79 @@
 session_start();
 include('inc/pdo.php');
 include('inc/functions.php');
+$title = 'Connexion';
+
 $errors = array();
 
-// if soumit
-if (!empty($_POST['submitconnex'])) {
+// if soumis
+if (!empty($_POST['submitted'])) {
   // Faille
-  $mail = cleanXss($_POST['mail']);
+  $email = cleanXss($_POST['email']);
   $password = cleanXss($_POST['password']);
 
-  if(!empty($mail) && !empty($password)) {
+  if(!empty($email) && !empty($password)) {
     // request
-    
+    $sql = "SELECT * FROM users WHERE email = :email OR password = :password";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':email',$email,PDO::PARAM_STR);
+    $query->bindValue(':password',$password,PDO::PARAM_STR);
+    $query->execute();
+    $user = $query->fetch();
+
+    if (!empty($user)) {
+      if (password_verify($password, $user['password'])) {
+
+        // connexion possible
+        $_SESSION['user'] = array(
+          'id' => $user['id'],
+          'nom' => $user['nom'],
+          'prenom' => $user['prenom'],
+          'email' => $user['email'],
+          'role' => $user['role'],
+          'ip' => $_SERVER['REMOTE_ADDR']
+        );
+
+        header('Location: index.php');
+      } else {
+        $errors['password'] = 'Le mot de passe est incorrect.';
+      }
+    }else {
+      $errors['email'] = 'Une erreur est survenue, veuillez réessayer.';
+    }
+  } else {
+    $errors['email'] = 'Veuillez renseigner les champs.';
   }
 }
 
-
-
-
-
-
 include('inc/header.php');?>
-<h1>Connexion</h1>
+<section class="connexion-content">
+  <div class="wrap">
 
-<form id="formconnex" action="" method="post">
-  <label for="mail">E-mail *</label>
-  <input type="text" name="mail" value="<?php if (!empty($_POST['mail'])) {
-    echo $_POST['mail'];
-  } ?>">
-  <span class="error"><?php if (!empty($errors['mail'])) {
-    echo $errors['mail'];
-  } ?></span>
+    <h2>Connexion</h2>
+    <hr>
 
-  <label for="mail">Mot de passe *</label>
-  <input type="text" name="mail" value="<?php if (!empty($_POST['password'])) {
-    echo $_POST['password'];
-  } ?>">
-  <span class="error"><?php if (!empty($errors['password'])) {
-    echo $errors['password'];
-  } ?></span>
+    <form id="formconnex" action="" method="post">
+      <!-- EMAIL -->
+      <div class="box-form">
+        <!-- <label for="mail">E-mail<span>*</span></label> -->
+        <input placeholder="&#xf0e0 Adresse Email" type="email" name="email"  id="mail" value="<?php if (!empty($_POST['email'])){echo $_POST['email'];} ?>">
+        <span class="error"><?php if (!empty($errors['email'])){echo $errors['email'];} ?></span>
+      </div>
+      <!-- MOT DE PASSE -->
+      <div class="box-form">
+        <!-- <label for="mdp">Mot de passe<span>*</span></label> -->
+        <input placeholder="&#xf084 Mot de passe" type="password" name="password"  id="mdp" value="<?php if (!empty($_POST['password'])){echo $_POST['password'];} ?>">
+        <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
+      </div>
+      <!-- MDP OUBLIE -->
+      <div class="btn-forgot">
+        <a href="forgotPassword.php">Mot de passe oublié</a>
+      </div>
+      <!-- SUBMIT -->
+      <input class="btn-contrast" type="submit" name="submitted" value="Se connecter">
+    </form>
 
-
-  <input type="submit" name="submitconnex" value="Je me connecte">
-</form>
+  </div>
+</section>
 
 <?php include('inc/footer.php');

@@ -114,39 +114,41 @@ include('inc/header.php');?>
 
   <?php if ($success == true) { ?>
     
-    <h2 class="congratulation">Bravo, votre inscription à bien été pris en compte !</h2>
-    <a class="btn congratulation" href="connexion.php">Se connecter</a>
+    <div class="congrats-wrap">
+      <h3 class="congrats-message"><span>Bravo</span>votre inscription à bien été pris en compte !</h3>
+      <a class="btn-contrast congrats-btn" href="connexion.php">Se connecter</a>
+    </div>
 
   <?php } else { ?>
-    <form id="forminscrit" action="" method="post">
+    <form id="forminscrit" action="" method="post" novalidate>
       <!-- NOM -->
       <div class="box-form">
         <!-- <label for="name">Nom<span>*</span></label> -->
-        <input placeholder="Nom*" type="text" name="nom"  id="name" value="<?php if (!empty($_POST['nom'])){echo $_POST['nom'];} ?>">
+        <input placeholder="&#xf406 Nom" type="text" name="nom"  id="name" value="<?php if (!empty($_POST['nom'])){echo $_POST['nom'];} ?>">
         <span class="error"><?php if (!empty($errors['nom'])){echo $errors['nom'];} ?></span>
       </div>
       <!-- PRENOM -->
       <div class="box-form">
         <!-- <label for="prenom">Prénom<span>*</span></label> -->
-        <input placeholder="Prénom*" type="text" name="prenom"  id="prenom" value="<?php if (!empty($_POST['prenom'])){echo $_POST['prenom'];} ?>">
+        <input placeholder="&#xf406 Prénom" type="text" name="prenom"  id="prenom" value="<?php if (!empty($_POST['prenom'])){echo $_POST['prenom'];} ?>">
         <span class="error"><?php if (!empty($errors['prenom'])){echo $errors['prenom'];} ?></span>
       </div>
       <!-- EMAIL -->
       <div class="box-form">
         <!-- <label for="mail">E-mail<span>*</span></label> -->
-        <input placeholder="Adresse Email*" type="email" name="email"  id="mail" value="<?php if (!empty($_POST['email'])){echo $_POST['email'];} ?>">
+        <input placeholder="&#xf0e0 Adresse Email" type="email" name="email"  id="mail" value="<?php if (!empty($_POST['email'])){echo $_POST['email'];} ?>">
         <span class="error"><?php if (!empty($errors['email'])){echo $errors['email'];} ?></span>
       </div>
       <!-- MOT DE PASSE 1 -->
       <div class="box-form">
         <!-- <label for="mdp">Mot de passe<span>*</span></label> -->
-        <input placeholder="Mot de passe*" type="password" name="password1"  id="mdp" value="<?php if (!empty($_POST['password1'])){echo $_POST['password1'];} ?>">
+        <input placeholder="&#xf084 Mot de passe" type="password" name="password1"  id="mdp" value="<?php if (!empty($_POST['password1'])){echo $_POST['password1'];} ?>">
         <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
       </div>
       <!-- MOT DE PASSE 2 -->
       <div class="box-form">
         <!-- <label for="mdp2">Confirmation Mot de passe<span>*</span></label> -->
-        <input placeholder="Confirmation du mot de passe*" type="password" name="password2"  id="mdp2" value="<?php if (!empty($_POST['password2'])){echo $_POST['password2'];} ?>">
+        <input placeholder="&#xf084 Confirmation du mot de passe" type="password" name="password2"  id="mdp2" value="<?php if (!empty($_POST['password2'])){echo $_POST['password2'];} ?>">
         <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
       </div>
       <!-- SUBMIT -->

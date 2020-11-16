@@ -1,5 +1,10 @@
 /* IMPORTATION */
 @import "reset.css";
+@font-face {
+  font-family: "Font Awesome 5 Free Regular";
+  src: url("../fontawesome/webfonts/fa-regular-400.woff2") format("woff2"),
+         url("../fontawesome/webfonts/fa-regular-400.woff") format("woff");
+ }
 
 /* CSS START */
 body {
@@ -166,15 +171,40 @@ h2 {
   padding-bottom: 5%;
   text-align: center;
 }
+#content .inscription-content .congrats-wrap {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-bottom: 52px;
+}
+#content .inscription-content h3.congrats-message {
+  font-size: 1.7em;
+  padding: 30px 20px;
+  color: green;
+  background-color: white;
+  border-radius: 70px;
+  margin-bottom: 45px;
+}
+#content .inscription-content h3.congrats-message span {
+  display: block;
+  font-size: 1.7em;
+  margin-bottom: 20px;
+}
 form input[type="text"], input[type="email"], input[type="password"] {
   padding: 1%;
   outline: none;
   border: none;
   border-radius: 25px;
   font-size: 1.2em;
-  margin: 0.5% 0;
-  width: 31%;
+  margin: 10px 0;
+  width: 30%;
   transition: .2s;
+}
+form input::placeholder {
+  font-family: 'ubuntu',"Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f674";
+  content: "\f406";
 }
 form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
@@ -184,14 +214,11 @@ form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]
 form input[type="submit"] {
   outline: none;
   cursor: pointer;
-  margin-top: 1%;
+  margin-top: 15px;
 }
 form span {
   display: block;
   color: chocolate;
-}
-#content .inscription-content .nom-prenom span {
-  display: inline-block;
 }
 
 /* FOOTER */
@@ -249,6 +276,7 @@ form span {
   font-weight: 500;
   font-size: 1.1em;
   transition: .2s;
+  padding: 10px;
 }
 #footer .footer-info .navigation-footer nav ul li a:hover {
   opacity: .7;
@@ -306,6 +334,9 @@ form span {
     padding-left: 2%;
     padding-right: 2%;
   }
+  #content .inscription-content {
+    padding-top: 120px;
+  }
 }
 @media screen and (max-width: 1360px) {
   #header nav {
@@ -340,6 +371,9 @@ form span {
   }
   #content img {
     margin-top: 13%;
+  }
+  #content .inscription-content {
+    padding-top: 190px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -376,6 +410,23 @@ form span {
     padding: 30px 0;
     border-top: 1px #474441 solid;
     border-bottom: 1px #474441 solid;
+  }
+  #content .inscription-content {
+    padding-top: 200px;
+    padding-bottom: 60px;
+  }
+  #content .inscription-content .congrats-wrap {
+    max-width: 600px;
+    padding: 0 4%;
+  }
+  #content .inscription-content h3.congrats-message {
+    margin-bottom: 60px;
+    font-size: 1.1em;
+  }
+  form input[type="text"], input[type="email"], input[type="password"] {
+    width: 90%;
+    height: 50px;
+    padding: 10px;
   }
 }
 @media screen and (max-width: 800px) {

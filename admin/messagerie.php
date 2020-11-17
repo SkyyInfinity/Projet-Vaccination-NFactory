@@ -1,8 +1,8 @@
 <?php
 include('../inc/pdo.php');
-
-
 include('../inc/functions.php');
+
+
 include('inc/admin_header.php');
 
 
@@ -13,7 +13,7 @@ $contacts = $query->fetchAll();
 
 
 ?>
-
+<!-- AFFICHAGE DES MESSAGES PROVENANT DU FORMULAIRE -->
 <table style="width:100%;">
   <tr>
     <th>id</th>

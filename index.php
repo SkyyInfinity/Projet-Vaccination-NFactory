@@ -1,6 +1,8 @@
 <?php
+session_start();
 include('inc/pdo.php');
 include('inc/functions.php');
+
 $title = 'Accueil';
 
 include('inc/header.php');

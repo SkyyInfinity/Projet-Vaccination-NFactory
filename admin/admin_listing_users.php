@@ -11,12 +11,14 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $users = $query->fetchAll();
 //debug($users);
+
+
+
+
+
 // pagination //
 
 
-
-
-// requete  supprimer //
 
 
 ?>

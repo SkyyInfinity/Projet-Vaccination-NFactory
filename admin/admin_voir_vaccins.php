@@ -3,18 +3,25 @@
 include('../inc/pdo.php');
 include('../inc/functions.php');
 
+if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
+  $id = $_GET['id'];
 
-
-$sql = "SELECT * FROM vaccins";
+$sql = "SELECT * FROM vaccins WHERE id=:id";
 $query = $pdo->prepare($sql);
+$query->bindValue(':id',$id,PDO::PARAM_INT);
 $query->execute();
-$vaccins = $query->fetchAll();
+$vaccin = $query->fetch();
+
+} else {
+  redirect('404.php');
+}
 //debug($users);
 // pagination //
 
 // requete modifier, supprimer //
 
 ?>
+
 
 
 
@@ -33,19 +40,16 @@ $vaccins = $query->fetchAll();
           width:100%;
           margin: 0 auto;}
       </style>
-
-      <?php foreach ($vaccins as $vaccin): ?>
-
+      
           <div class="users">
             <ul>
               <li>
-                <p>Vaccin | <?php echo $vaccin['nom']; ?></p>
-                <p>Maladie ciblées | <?php echo $vaccin['maladie_ciblées']; ?></p>
-                <a href="admin_delete_vaccins.php?id=<?= $vaccin['id'] ?>">Supprimer</a>
-                <a href="admin_voir_vaccins.php?id=<?= $vaccin['id'] ?>">Voir</a>
+                <p>Vaccin: <?php echo $vaccin['nom']; ?></p>
+                <p>Detail vaccin: <br><br> <?php echo $vaccin['details']; ?></p>
+                <p>Presentation: <br><br> <?php echo $vaccin['presentation']; ?></p>
+                <a href="admin_modif_vaccins.php?id=<?= $vaccin['id'] ?>">Modifier</a>
+                <a href="admin_listing_vaccins.php">Retour</a>
               </li>
             </ul>
-        </div>
-
-      <?php endforeach; ?>
-      </div>
+          </div>
+    </div>

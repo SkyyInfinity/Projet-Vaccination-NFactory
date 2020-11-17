@@ -10,6 +10,8 @@ if(empty($_SESSION)) {
     ?>
 <section class="inscription-content">
     <div class="wrap">
+        <h2>Déconnexion</h2>
+        <hr>
         <div class="congrats-wrap">
             <h3 class="congrats-message">votre déconnexion à bien été pris en compte !</h3>
             <p class="congrats-redirect">Vous allez être automatiquement redirigé vers l'accueil...</p>

@@ -40,10 +40,10 @@ if (!empty($_POST['submitted'])) {
         $errors['password'] = 'Le mot de passe est incorrect.';
       }
     }else {
-      $errors['email'] = 'Une erreur est survenue, veuillez réessayer.';
+      $errors['password'] = 'Une erreur est survenue, veuillez réessayer.';
     }
   } else {
-    $errors['email'] = 'Veuillez renseigner les champs.';
+    $errors['password'] = 'Veuillez renseigner les champs.';
   }
 }
 
@@ -54,7 +54,7 @@ include('inc/header.php');?>
     <h2>Connexion</h2>
     <hr>
 
-    <form id="formconnex" action="" method="post">
+    <form id="formconnex" action="" method="post" novalidate>
       <!-- EMAIL -->
       <div class="box-form">
         <!-- <label for="mail">E-mail<span>*</span></label> -->

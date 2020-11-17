@@ -80,8 +80,8 @@ if (!empty($_POST['submitted'])) {
     $query->execute();
 
     $success = true;
-    // header('Location: index.php');
-
+    //redirection
+    redirectTempo(5, 'connexion.php');
 
   }
 }
@@ -99,7 +99,7 @@ include('inc/header.php');?>
     
     <div class="congrats-wrap">
       <h3 class="congrats-message"><span>Bravo</span>votre inscription à bien été pris en compte !</h3>
-      <a class="btn-contrast congrats-btn" href="connexion.php">Se connecter</a>
+      <p class="congrats-redirect">Vous allez être automatiquement redirigé vers la connexion...</p>
     </div>
 
   <?php } else { ?>

@@ -25,4 +25,4 @@ include('inc/admin_header.php');
 <!-- End of Main Content -->
 
 
-include(inc/admin_footer.php);
+<?php include('inc/admin_footer.php'); ?>

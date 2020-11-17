@@ -97,7 +97,7 @@ h2 {
 #header nav ul {
   display: flex;
   justify-content: space-between;
-  width: 33%;
+  width: 43%;
 }
 #header nav ul li a {
   text-decoration: none;
@@ -199,7 +199,16 @@ h2 {
   font-size: 1.7em;
   margin-bottom: 20px;
 }
+#content .inscription-content .congrats-wrap .congrats-redirect {
+  font-size: 1.2em;
+  padding: 30px 20px;
+  color: green;
+  background-color: white;
+  border-radius: 70px;
+  margin-bottom: 45px;
+}
 form input[type="text"], input[type="email"], input[type="password"] {
+  color: #474441;
   padding: 1%;
   outline: none;
   border: none;

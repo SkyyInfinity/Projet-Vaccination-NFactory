@@ -229,6 +229,27 @@ form span {
   display: block;
   color: chocolate;
 }
+textarea{
+  height :270px;
+}
+#msg {
+  padding: 1%;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2em;
+  margin: 10px 0;
+  width: 30%;
+  transition: .2s;
+  font-family: 'ubuntu',"Font Awesome 5 Free";
+  color : #474441;
+}
+
+#msg::placeholder{
+  font-family: 'ubuntu',"Font Awesome 5 Free";
+  font-weight: 900;
+}
+=======
 #content .connexion-content {
   background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
   padding-top: 7%;

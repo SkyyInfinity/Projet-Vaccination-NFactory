@@ -64,24 +64,6 @@ if (!empty($_POST['submitted'])) {
         $errors['password'] = 'Veuillez renseigner ce champ.';
       }
 
-      $majuscule        = preg_match('@[A-Z]@', $password2);
-      $minuscule        = preg_match('@[a-z]@', $password2);
-      $chiffre          = preg_match('@[0-9]@', $password2);
-      $caractereSpecial = preg_match('@[^\w]@', $password2);
-      if(!empty($password2)){
-        if(mb_strlen($password2) < 5) {
-          $errors['password'] = 'Le mot de passe doit être plus grand que 5 caractères.';
-        } elseif(mb_strlen($password2) > 45) {
-          $errors['password'] = 'Le mot de passe doit être plus petit que 45 caractères.';
-        }
-        elseif(!$majuscule || !$minuscule || !$chiffre || !$caractereSpecial) {
-          $errors['password'] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractére spécial.';
-        }
-
-      }else {
-        $errors['password'] = 'Veuillez renseigner ce champ.';
-      }
-
   if(count($errors) == 0) {
 
     $hashPassword= password_hash($password1, PASSWORD_DEFAULT);
@@ -109,6 +91,7 @@ include('inc/header.php');?>
 
 <section class="inscription-content">
   <div class="wrap">
+
     <h2>Inscription</h2>
     <hr>
 
@@ -156,6 +139,7 @@ include('inc/header.php');?>
     </form>
 
   <?php } ?>
+
   </div>
 </section>
 

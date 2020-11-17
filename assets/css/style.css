@@ -130,6 +130,15 @@ h2 {
   color: white;
   opacity: 1;
 }
+#header nav ul li p.welcome {
+  color: #474441;
+  font-weight: regular;
+  font-size: 1.1em;
+  font-style: italic;
+}
+#header nav ul li p.welcome span {
+  font-weight: 500;
+}
 
 /* ACCUEIL */
 #content .hero img {
@@ -239,6 +248,23 @@ textarea{
 #msg::placeholder{
   font-family: 'ubuntu',"Font Awesome 5 Free";
   font-weight: 900;
+}
+=======
+#content .connexion-content {
+  background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+  padding-top: 7%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+#content .connexion-content .btn-forgot {
+  margin: 8px 0 15px 0;
+}
+#content .connexion-content .btn-forgot a {
+  color: #474441;
+  transition: .2s;
+}
+#content .connexion-content .btn-forgot a:hover {
+  opacity: .7;
 }
 
 /* FOOTER */
@@ -357,6 +383,9 @@ textarea{
   #content .inscription-content {
     padding-top: 120px;
   }
+  #content .connexion-content {
+    padding-top: 120px;
+  }
 }
 @media screen and (max-width: 1360px) {
   #header nav {
@@ -393,6 +422,9 @@ textarea{
     margin-top: 13%;
   }
   #content .inscription-content {
+    padding-top: 190px;
+  }
+  #content .connexion-content {
     padding-top: 190px;
   }
 }
@@ -447,6 +479,10 @@ textarea{
     width: 90%;
     height: 50px;
     padding: 10px;
+  }
+  #content .connexion-content {
+    padding-top: 200px;
+    padding-bottom: 60px;
   }
 }
 @media screen and (max-width: 800px) {

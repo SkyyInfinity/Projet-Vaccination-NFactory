@@ -9,6 +9,10 @@ function debug($tableau) {
 function redirect($page) {
   header("Location: $page");
 }
+// R E D I R E C T I O N T E M P O /////////////////////////////////////////////
+function redirectTempo($value, $page) {
+  header("refresh:$value;url=$page");
+}
 // P A G I N A T I O N /////////////////////////////////////////////////////////
 function pagination($id, $page, $num, $count) {
   ?><ul><?php

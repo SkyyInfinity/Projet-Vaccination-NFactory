@@ -49,11 +49,17 @@ include('inc/header.php'); ?>
     <hr>
 
     <?php if ($success == true) { ?>
-
-      <div class="congrats-wrap">
-        <h3 class="congrats-message"><span>Bravo</span>Votre message a bien été pris en compte !</h3>
-        <a class="btn-contrast congrats-btn" href="index.php">Retourner à l'accueil</a>
-      </div>
+      <section class="inscription-content">
+        <div class="wrap">
+          <div class="congrats-wrap">
+            <h3 class="congrats-message">Votre message a bien été pris en compte !</h3>
+            <p class="congrats-redirect">Vous allez être automatiquement redirigé vers l'accueil...</p>
+          </div>
+        </div>
+      </section>
+      <?php
+      redirectTempo(5, 'index.php');
+      ?>
 
     <?php } else { ?>
       <form id="forminscrit" action="" method="post" novalidate>

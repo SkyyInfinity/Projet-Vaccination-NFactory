@@ -35,7 +35,7 @@ include('inc/header.php');
             </nav>
             <!-- CONTENT -->
             <div class="listing-box">
-                <p><span>Voulez vous vraiment supprimer votre compte ?</span></p>
+                <p class="confirme-delete">Voulez vous vraiment supprimer votre compte ?</p>
                 <ul>
                     <li><a class="danger-confirme" href="delete-account-true.php?id=<?php echo $_SESSION['user']['id'] ?>">Supprimer</a></li>
                     <li><a class="btn-contrast" href="mon-compte.php?id=<?php echo $_SESSION['user']['id'] ?>">Annuler</a></li>

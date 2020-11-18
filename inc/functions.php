@@ -81,9 +81,13 @@ function generateRandomString($length = 10) {
     }
     return $randomString;
 }
-// F O R M A T A G E D A T E ///////////////////////////////////////////////////
+// F O R M A T A G E D A T E W I T H M I N U T E ////////////////////////////////
 function formatDate($dateValue) {
   return date('d/m/Y H:i', strtotime($dateValue));
+}
+// F O R M A T A G E D A T E W H I T H O U T M I N U T E ////////////////////////
+function formatDateWithoutMinute($dateValue) {
+  return date('d/m/Y', strtotime($dateValue));
 }
 // I S L O G G E D /////////////////////////////////////////////////////////////
 function isLogged(){

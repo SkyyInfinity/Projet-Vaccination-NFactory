@@ -224,7 +224,7 @@ form input::placeholder {
   content: "\f674";
   content: "\f406";
 }
-form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
@@ -286,6 +286,9 @@ textarea{
   background-color: #f7f7f7;
   border-radius: 35px;
   padding: 2% 0;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(117,117,117,1);
+-moz-box-shadow: 0px 0px 8px 0px rgba(117,117,117,1);
+box-shadow: 0px 0px 8px 0px rgba(117,117,117,1);
 }
 #content section.moncompte-section .moncompte-box nav {
   display: flex;
@@ -341,7 +344,7 @@ textarea{
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 #content section.moncompte-section .moncompte-box .listing-box p {
   font-size: 1.3em;
@@ -349,32 +352,49 @@ textarea{
 }
 #content section.moncompte-section .moncompte-box .listing-box p span {
   font-size: 1.1em;
-  text-transform: uppercase;
   font-weight: bold;
-  display: block;
-  border: 2px solid;
-  border-radius: 35px;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+#content section.moncompte-section .moncompte-box .listing-box p.confirme-delete {
+  text-align: center;
+  line-height: 1.4em;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+#content section.moncompte-section .moncompte-box .listing-box a.modify-mdp {
+  margin: 0;
 }
 #content section.moncompte-section .moncompte-box .listing-box a {
-  display: block;
-  font-size: 1.1em;
-  margin: 5% 20%;
+  display: inline-block;
+  font-size: .9em;
+  margin: 10px 10px;
+}
+#content section.moncompte-section .moncompte-box .listing-box ul {
+  display: flex;
+  justify-content: center;
 }
 #content section.moncompte-section .moncompte-box .listing-box a.danger-confirme {
   background-color: #bb2205;
   border: 2px #bb2205 solid;
   color: white;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: .9em;
   transition: .2s;
   padding: 15px 30px;
   border-radius: 30px;
   transition: .2s;
+  display: inline-block;
 }
 #content section.moncompte-section .moncompte-box .listing-box a.danger-confirme:hover {
   background-color: red;
   border: 2px red solid;
   color: white;
+}
+#content section.moncompte-section .moncompte-box .listing-box span.date-vaccin {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 30px;
 }
 
 /* FOOTER */

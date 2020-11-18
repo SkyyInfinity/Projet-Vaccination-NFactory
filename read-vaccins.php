@@ -4,6 +4,7 @@ include('inc/pdo.php');
 include('inc/functions.php');
 $title = 'Mes vaccins';
 
+// RECUPERE L'ID
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
   
@@ -17,23 +18,19 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
         redirect('404.php');
     }
 }
-
-// Selection user
-$sql = "SELECT * FROM users WHERE id = :id";
+// JOINTURE USER/VACCINS
+$sql = "SELECT users.id, vaccins.nom, users_vaccins.date_vaccin
+        FROM users 
+        LEFT JOIN users_vaccins 
+        ON users.id = users_vaccins.id_user 
+        RIGHT JOIN vaccins 
+        ON users_vaccins.id_vaccin = vaccins.id 
+        WHERE users.id = $id";
 $query = $pdo->prepare($sql);
-$query->bindValue(':id',$id,PDO::PARAM_INT);
 $query->execute();
-$user = $query->fetch();
-
-// Selection vaccins (RELATION)
-$sql = "SELECT * FROM vaccins WHERE id = :id";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id,PDO::PARAM_INT);
-$query->execute();
-$vaccins = $query->fetchAll();
+$userVaccins = $query->fetchAll();
 
 include('inc/header.php');
-
 ?>
 <section class="moncompte-section">
     <div class="wrap">
@@ -48,12 +45,12 @@ include('inc/header.php');
                 </ul>
             </nav>
             <div class="listing-box">
-                <p><?php echo $user['id']; ?></p>
-                <?php foreach($vaccins as $vaccin) { ?>
-                    <li>
-                        <p><?php echo $vaccin['nom']; ?></p>
-                    </li>
-                <?php }; ?>
+                <p><span>Vaccins ajoutés</span></p>
+                <?php
+                 for ($i=0; $i<count($userVaccins) ; $i++) {
+                    echo '<p>' . $userVaccins[$i]['nom'] . '</p><span class="date-vaccin">Date: ' . formatDateWithoutMinute($userVaccins[$i]['date_vaccin']) . '</span>';
+                };
+                ?>
             </div>
         </div>
     </div>

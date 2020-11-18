@@ -49,30 +49,6 @@ if (!empty($_POST['submitted'])) {
 
 include('inc/header.php');?>
 
-<h1>Connexion</h1>
-
-<form id="formconnex" action="" method="post">
-  <label for="mail">E-mail *</label>
-  <input type="text" name="mail" value="<?php if (!empty($_POST['mail'])) {
-    echo $_POST['mail'];
-  } ?>">
-  <span class="error"><?php if (!empty($errors['mail'])) {
-    echo $errors['mail'];
-  } ?></span>
-
-  <label for="mail">Mot de passe *</label>
-  <input type="password" name="password" value="<?php if (!empty($_POST['password'])) {
-    echo $_POST['password'];
-  } ?>">
-  <span class="error"><?php if (!empty($errors['password'])) {
-    echo $errors['password'];
-  } ?></span>
-
-
-  <input type="submit" name="submitconnex" value="Je me connecte">
-</form>
-<a href="forgotPassword.php">Mot de passe Oublié</a>
-
 <section class="connexion-content">
   <div class="wrap">
 

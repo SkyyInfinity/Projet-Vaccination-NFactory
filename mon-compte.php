@@ -38,8 +38,7 @@ include('inc/header.php');
                 <p><span>Nom</span><?php echo $user['nom'] ?></p>
                 <p><span>Prenom</span><?php echo $user['prenom'] ?></p>
                 <p><span>Adresse email</span><?php echo $user['email'] ?></p>
-                <p><span>Mot de passe</span></p>
-                <a class="btn-contrast" href="forgotPassword.php">Modifier mon mot de passe</a>
+                <p><span>Mot de passe</span><a class="modify-mdp" href="forgotPassword.php">Modifier mon mot de passe</a></p>
             </div>
         </div>
     </div>

@@ -97,7 +97,7 @@ h2 {
 #header nav ul {
   display: flex;
   justify-content: space-between;
-  width: 33%;
+  width: 43%;
 }
 #header nav ul li a {
   text-decoration: none;
@@ -199,7 +199,16 @@ h2 {
   font-size: 1.7em;
   margin-bottom: 20px;
 }
+#content .inscription-content .congrats-wrap .congrats-redirect {
+  font-size: 1.2em;
+  padding: 30px 20px;
+  color: green;
+  background-color: white;
+  border-radius: 70px;
+  margin-bottom: 45px;
+}
 form input[type="text"], input[type="email"], input[type="password"] {
+  color: #474441;
   padding: 1%;
   outline: none;
   border: none;
@@ -249,7 +258,6 @@ textarea{
   font-family: 'ubuntu',"Font Awesome 5 Free";
   font-weight: 900;
 }
-=======
 #content .connexion-content {
   background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
   padding-top: 7%;
@@ -265,6 +273,108 @@ textarea{
 }
 #content .connexion-content .btn-forgot a:hover {
   opacity: .7;
+}
+
+/* MON COMPTE */
+#content section.moncompte-section {
+  background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+  padding-top: 7%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+#content section.moncompte-section .moncompte-box {
+  background-color: #f7f7f7;
+  border-radius: 35px;
+  padding: 2% 0;
+}
+#content section.moncompte-section .moncompte-box nav {
+  display: flex;
+  justify-content: center;
+}
+#content section.moncompte-section .moncompte-box nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  border-bottom: 1px #474441 solid;
+}
+#content section.moncompte-section .moncompte-box nav ul li {
+  padding: 25px 0;
+  border-radius: 35px;
+}
+#content section.moncompte-section .moncompte-box nav ul li a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #474441;
+  font-size: 1.3em;
+  font-weight: 500;
+  border-radius: 35px;
+  border: 2px #474441 solid;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box nav ul li a:hover {
+  color: white;
+  background-color: #615d59;
+  border: 2px #615d59 solid;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.active {
+  color: white;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.danger{
+  color: #bb2205;
+  border: 2px #bb2205 solid;
+  background-color: #f7f7f7;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.danger.actived{
+  color: white;
+  background-color: #bb2205;
+  border: 2px #bb2205 solid;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.danger:hover, a.danger.actived:hover {
+  color: white;
+  background-color: red;
+  border: 2px red solid;
+}
+#content section.moncompte-section .moncompte-box .listing-box {
+  padding: 2% 0;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+#content section.moncompte-section .moncompte-box .listing-box p {
+  font-size: 1.3em;
+  line-height: 2em;
+}
+#content section.moncompte-section .moncompte-box .listing-box p span {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  border: 2px solid;
+  border-radius: 35px;
+}
+#content section.moncompte-section .moncompte-box .listing-box a {
+  display: block;
+  font-size: 1.1em;
+  margin: 5% 20%;
+}
+#content section.moncompte-section .moncompte-box .listing-box a.danger-confirme {
+  background-color: #bb2205;
+  border: 2px #bb2205 solid;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: .2s;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box .listing-box a.danger-confirme:hover {
+  background-color: red;
+  border: 2px red solid;
+  color: white;
 }
 
 /* FOOTER */

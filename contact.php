@@ -47,7 +47,6 @@ include('inc/header.php'); ?>
   <div class="wrap">
     <h2>Nous contacter</h2>
     <hr>
-
     <?php if ($success == true) { ?>
       <section class="inscription-content">
         <div class="wrap">

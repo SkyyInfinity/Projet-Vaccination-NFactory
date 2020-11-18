@@ -74,7 +74,7 @@ include('inc/header.php');?>
 
   <input type="submit" name="submitconnex" value="Je me connecte">
 </form>
-<a href="verifCle.php">Mot de passe Oublié</a>
+<a href="forgotPassword.php">Mot de passe Oublié</a>
 
 
 <?php include('inc/footer.php');

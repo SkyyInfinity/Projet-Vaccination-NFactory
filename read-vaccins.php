@@ -18,12 +18,19 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
     }
 }
 
-// SELECT * FROM A INNER JOIN B ON A.key = B.key
-$sql = "SELECT * FROM `users-vaccins` WHERE id_user = :id";
+// Selection user
+$sql = "SELECT * FROM users WHERE id = :id";
 $query = $pdo->prepare($sql);
 $query->bindValue(':id',$id,PDO::PARAM_INT);
 $query->execute();
-$userVaccins = $query->fetchAll();
+$user = $query->fetch();
+
+// Selection vaccins (RELATION)
+$sql = "SELECT * FROM vaccins WHERE id = :id";
+$query = $pdo->prepare($sql);
+$query->bindValue(':id',$id,PDO::PARAM_INT);
+$query->execute();
+$vaccins = $query->fetchAll();
 
 include('inc/header.php');
 
@@ -41,11 +48,12 @@ include('inc/header.php');
                 </ul>
             </nav>
             <div class="listing-box">
-                <?php 
-                foreach ($userVaccins as $userVaccin) {
-                    echo $userVaccin['id_user'];
-                }
-                ?>
+                <p><?php echo $user['id']; ?></p>
+                <?php foreach($vaccins as $vaccin) { ?>
+                    <li>
+                        <p><?php echo $vaccin['nom']; ?></p>
+                    </li>
+                <?php }; ?>
             </div>
         </div>
     </div>

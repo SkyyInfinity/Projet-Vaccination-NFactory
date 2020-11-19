@@ -20,7 +20,7 @@ $vaccin = $query->fetch();
 
 // requete modifier, supprimer //
 
-?>
+include('inc/admin_header.php');?>
 
 
 
@@ -40,7 +40,7 @@ $vaccin = $query->fetch();
           width:100%;
           margin: 0 auto;}
       </style>
-      
+
           <div class="users">
             <ul>
               <li>
@@ -53,3 +53,4 @@ $vaccin = $query->fetch();
             </ul>
           </div>
     </div>
+<?php include('inc/admin_footer.php');

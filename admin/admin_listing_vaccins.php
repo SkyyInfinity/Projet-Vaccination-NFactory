@@ -6,9 +6,10 @@ include('../inc/pdo.php');
 include('../inc/functions.php');
 use JasonGrimes\Paginator;
 $errors = array();
-// pagination //
+//////////////////////////////////// pagination ////////////////////////////
+
 //Nombre d'elements
-$itemsPerPage = 5;
+$itemsPerPage = 6;
 // Page courante
 $currentPage = 1;
 // Offset
@@ -27,44 +28,47 @@ $urlPattern = 'admin_listing_vaccins.php?page=(:num)';
 
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
-
+/////////////////////////////////////////////////////////////////////////
 /////////////////////// affichage des vaccins ///////////////////////////
+////////////////////////////////////////////////////////////////////////
 $sql = "SELECT * FROM vaccins ORDER BY id DESC LIMIT $offset,$itemsPerPage";
 $query = $pdo->prepare($sql);
 $query->execute();
 $vaccins = $query->fetchAll();
-
-?>
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+include('inc/admin_header.php');?>
 
     <div class="wrap">
       <h1>Tableau des vaccins | MODERATION</h1>
         <?php echo '<div class="pagination">' . $paginator . '</div>'; ?>
-
-      <style>
-        .pagination{
-          text-align: center;
-        }
-        .pagination li{
-          display: inline-block;
-          margin: 0 10px;
-        }
-        body{background-color: #d3d3d3;}
-        h1{text-align: center;}
-        .users{
-          text-align: center;
-          border:1px solid black;
-  	       padding: 10px;
+        <style>
+          .pagination{
+            text-align: center;
+          }
+          .pagination li{
+            display: inline-block;
+            margin: 0 10px;
+          }
+          h1{text-align: center;}
+          .users{
+            text-align: center;
+            border:1px solid black;
+  	        padding: 10px;
   	        margin-top: 15px;}
-        .wrap {
-          max-width: 1000px;
-          width:100%;
-          margin: 0 auto;}
-      </style>
+            .wrap {
+  	         max-width: 1000px;
+  	         width:100%;
+  	         margin: 0 auto;}
+        </style>
+      <div class="creation">
       <a href="admin_creation_vaccins.php">creation vaccin</a>
+      </div>
       <!-- liste des vaccins  -->
       <?php foreach ($vaccins as $vaccin): ?>
 
           <div class="users">
+
             <ul>
               <li>
                 <p>Vaccin | <?php echo $vaccin['nom']; ?></p>
@@ -77,4 +81,4 @@ $vaccins = $query->fetchAll();
 
       <?php endforeach; ?>
       </div>
-      <?php echo '<div class="pagination">' . $paginator . '</div>'; ?>
+    <?php  include('inc/admin_footer.php');

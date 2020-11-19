@@ -1,54 +1,68 @@
 <?php
 session_start();
 //session_start();
+require('../vendor/autoload.php');
 include('../inc/pdo.php');
 include('../inc/functions.php');
+///////////////////////////////////////////////////////////////////////////////
+///////////// PAGINATION //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+use JasonGrimes\Paginator;
+$errors = array();
+//Nombre d'elements
+$itemsPerPage = 5;
+// Page courante
+$currentPage = 1;
+// Offset
+$offset = 0;
 
+if(!empty($_GET['page'])) {
+  $currentPage = $_GET['page'];
+  $offset = $currentPage * $itemsPerPage - $itemsPerPage;
+}
+$sql = "SELECT COUNT(id) FROM users";
+$query = $pdo->prepare($sql);
+$query->execute();
+$totalItems = $query->fetchColumn();
 
- //  requete utilisateur //
-$sql = "SELECT * FROM users ORDER BY nom ASC";
+$urlPattern = 'admin_listing_users.php?page=(:num)';
+
+$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+///////////////////////////////////////////////////////////////////////////////////
+////////// Affichage des utilisateurs ////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+$sql = "SELECT * FROM users ORDER BY nom ASC LIMIT $offset,$itemsPerPage";
 $query = $pdo->prepare($sql);
 $query->execute();
 $users = $query->fetchAll();
 //debug($users);
 
-
-
-
-
-// pagination //
-
-
-
-
+include('inc/admin_header.php');
 ?>
-
-
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="wrap">
+  <div class="wrap">
       <h1>Tableau users | MODERATION</h1>
       <style>
-        body{background-color: #d3d3d3;}
+      .pagination{
+        text-align: center;
+      }
+      .pagination li{
+        display: inline-block;
+        margin: 0 10px;
+       }
         h1{text-align: center;}
+
         .users{
           text-align: center;
           border:1px solid black;
-  	      padding: 10px;
-  	      margin-top: 15px;}
-          .wrap {
-  	       max-width: 1000px;
-  	      width:100%;
-  	      margin: 0 auto;}
-         </style>
-      <table>
+          padding: 10px;
+          margin-top: 15px;}
+        .wrap {
+          max-width: 1000px;
+          width:100%;
+          margin: 0 auto;}
 
-
+      </style>
+      <?php echo '<div class="pagination">' . $paginator . '</div>'; ?>
         <?php foreach ($users as $user): ?>
           <form class="" action="index.html" method="post">
             <div class="users">
@@ -62,7 +76,5 @@ $users = $query->fetchAll();
             </div>
           </form>
         <?php endforeach; ?>
-      </table>
     </div>
-  </body>
-</html>
+  <?php  include('inc/admin_footer.php');

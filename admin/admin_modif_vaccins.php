@@ -45,7 +45,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 // Traitement du formualire
 
 
-?>
+include('inc/admin_header.php');?>
 <h1>Modification du vaccin</h1>
 <style>
 body{background-color: #d3d3d3;}
@@ -70,6 +70,7 @@ h1{
 
 
 <form class="formulaire1" action="" method="post">
+  <p>Vaccin: <?php echo $vaccin['nom']; ?></p>
   <!-- Maladie ciblées -->
   <div class="maladie">
     <label for="maladie">Maladie(s)</label>
@@ -95,3 +96,4 @@ h1{
   </div>
 </form>
 </div>
+<?php include('inc/admin_footer.php');

@@ -99,7 +99,7 @@ h2 {
   justify-content: space-between;
   width: 43%;
 }
-#header nav ul li a {
+#header nav ul li a{
   text-decoration: none;
   color: #474441;
   font-weight: 500;
@@ -108,7 +108,7 @@ h2 {
   padding: 10px 15px;
   border-radius: 20px;
 }
-#header nav ul li a:hover {
+#header nav ul li a:hover{
   opacity: .7;
 }
 #header nav ul li a.inscription {
@@ -377,6 +377,136 @@ textarea{
   color: white;
 }
 
+/* MENTIONS LEGALES */
+#content .mentionsLegales{
+  background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+  padding: 100px;
+  line-height: 1.3em;
+  width: 100%;
+  margin: auto;
+  text-align: justify;
+  /* position: fixed; */
+
+}
+.wrapme {
+  /* width: 1000px; */
+  padding-top : 0px;
+  /* margin: 0 auto; */
+
+}
+ #content .mentionsLegales h2{
+  font-size: 2em;
+  font-weight: 1.5em;
+}
+#content .mentionsLegales .head{
+  /* padding: -2px 0 10px 0; */
+  /* position: relative; */
+  padding: 10px 0 5px 0;
+  text-align: center;
+  width: 84%;
+  margin: auto;
+
+
+
+  /* width: 50%; */
+}
+
+#content .mentionsLegales .head h1{
+}
+#content .mentionsLegales .head hr {
+  border: none;
+  background-color: white;
+  height: 5px;
+  width: 270px;
+  text-align: center;
+  margin: 50px auto 0px auto;
+
+}
+#content .wrapme {
+  padding-top: 40px;
+}
+#content .wrapme .retour {
+  /* margin: -20px  auto 10px auto; */
+
+  width: 280px;
+  margin: auto;
+  text-align: center;
+  opacity: 1;
+  transition: .2s;
+
+}
+#content .mentionsLegales .retour a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #69e063;
+  border: 2px solid #69e063;
+  border-radius: 5px;
+  transition: .2s;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: white;
+
+}
+#content .mentionsLegales  .retour:hover{
+  border: none;
+  width: 192px;
+  opacity: .5;
+  background-color: #5abf55;
+}
+#content .wrapme h2{
+  font-size: 1.9em;
+  padding-top: 20px;
+  margin: 20px 0 20px 0;
+}
+#content .wrapme p{
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #2b332d;
+}
+#content .wrapme article ul li span {
+  font-weight: bold;
+}
+#content .wrapme article ul li span:hover {
+  color: white;
+  transition: .3s;
+
+}
+#content .wrapme .tableau {
+  padding-top: 40px;
+  margin-left: 40px;
+  text-align: center;
+}
+#content .wrapme .tableau ul{
+  padding-top: 10px;
+
+}
+#content .wrapme .tableau ul li a{
+  padding-top: 40px;
+  color: white;
+  transition: .2s;
+  padding: 10px;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+#content .wrapme .tableau ul li a:hover {
+  opacity: .7;
+  /* transition: .2s; */
+
+}
+#content .wrapme .lien a{
+  color: white;
+  transition: .2s;
+  text-decoration: none;
+}
+#content .wrapme .lien a:hover{
+  opacity: .5;
+}
+
+
+
+
+
+
 /* FOOTER */
 #footer {
   background-color: #fff;
@@ -601,6 +731,9 @@ textarea{
   }
   #content .info {
     top: 31%;
+  }
+  .mentionsLegales {
+    width: 100%;
   }
 }
 @media screen and (max-width: 700px) {

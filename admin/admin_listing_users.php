@@ -4,6 +4,8 @@ session_start();
 require('../vendor/autoload.php');
 include('../inc/pdo.php');
 include('../inc/functions.php');
+
+if($_SESSION['user']['role'] == 'admin') {
 ///////////////////////////////////////////////////////////////////////////////
 ///////////// PAGINATION //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -78,3 +80,6 @@ include('inc/admin_header.php');
         <?php endforeach; ?>
     </div>
   <?php  include('inc/admin_footer.php');
+} else {
+  redirect('404.php');
+}

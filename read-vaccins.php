@@ -47,7 +47,8 @@ include('inc/header.php');
             <div class="listing-box">
                 <div class="add-vaccins">
                     <p><span>Vaccins ajoutés</span></p>
-                    <a href="add-vaccins.php?id=<?php echo $_SESSION['user']['id'] ?>">Ajouté un vaccin</a>
+                    <a href="add-vaccins.php?id=<?php echo $_SESSION['user']['id'] ?>">Ajouter un vaccin</a>
+                    <a href="admin/admin_relance.php">Relance email</a>
                 </div>
                 <?php
                  for ($i=0; $i<count($userVaccins) ; $i++) {

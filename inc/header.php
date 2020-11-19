@@ -27,7 +27,7 @@
                                 <li><a class="inscription" href="mon-compte.php?id=<?php echo $_SESSION['user']['id'] ?>">Mon compte</a></li>
                             <?php } ?> 
                             <?php if(!empty($_SESSION['user']['role'] == 'admin')) { ?>
-                                <li><a class="inscription" href="admin/admin_index.php">Admin</a></li>
+                                <li><a class="inscription" href="admin/index.php">Admin</a></li>
                             <?php } ?> 
                             <li><a class="connexion" href="deconnexion.php">Déconnexion</a></li>
                         <?php } else { ?>

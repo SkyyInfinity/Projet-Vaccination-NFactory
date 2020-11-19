@@ -1,10 +1,12 @@
 <?php
 
-//session_start();
+session_start();
 require('../vendor/autoload.php');
 include('../inc/pdo.php');
 include('../inc/functions.php');
 use JasonGrimes\Paginator;
+
+if($_SESSION['user']['role'] == 'admin') {
 $errors = array();
 //////////////////////////////////// pagination ////////////////////////////
 
@@ -82,3 +84,6 @@ include('inc/admin_header.php');?>
       <?php endforeach; ?>
       </div>
     <?php  include('inc/admin_footer.php');
+} else {
+  redirect('404.php');
+}

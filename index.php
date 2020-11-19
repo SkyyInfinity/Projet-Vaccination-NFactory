@@ -21,9 +21,14 @@ include('inc/header.php');
 </div>
 <section class="section-explications">
     <div class="wrap">
-        <h2>En quoi consiste le site ?</h2>
+        <h2>En quoi consiste le service proposé par notre Site ?</h2>
         <hr>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat eaque hic facere vitae amet, et magnam, dicta quasi ea labore! Iure ipsam sunt nulla quia quo fugit velit voluptatibus blanditiis, facilis et est tenetur nam doloremque omnis sapiente excepturi? Voluptate, rem accusamus necessitatibus vitae saepe voluptatem eos veniam tempora aliquam dolorem suscipit at sed, dolores autem quasi et? Dolorum beatae facilis debitis molestias asperiores recusandae sed culpa incidunt voluptatem? Quidem asperiores rem repellendus commodi eligendi minima similique fuga! Voluptas tempore laudantium assumenda, modi dolores expedita laborum pariatur hic commodi? Corporis consectetur numquam autem eveniet ducimus modi quidem tenetur cupiditate?</p>
+        <p>Sur notre Site, les utilisateurs peuvent créer et consulter leur carnet de vaccination personnel.</br>
+
+Le service offert par notre Site a pour objet de faire de la gestion de votre activité médicale une simple formalité,</br>
+en effet, vous pourrez y tenir une liste complète de vos différents vaccins et ainsi reçevoir des mails personalisé pour le rappel de ceux ci.</br>
+
+MyVaccine.org est un service totalement gratuit au service de ses utilisateurs.</p>
     </div>
 </section>
 <?php

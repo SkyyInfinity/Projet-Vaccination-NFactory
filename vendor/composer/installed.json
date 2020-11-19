@@ -1,14 +1,9 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "6271507d7b52aeef552f792f394655c8",
     "packages": [
         {
             "name": "jasongrimes/paginator",
             "version": "1.0.3",
+            "version_normalized": "1.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasongrimes/php-paginator.git",
@@ -26,7 +21,9 @@
             "require-dev": {
                 "phpunit/phpunit": "~4.2"
             },
+            "time": "2018-07-11T18:11:49+00:00",
             "type": "library",
+            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "JasonGrimes": "src/"
@@ -53,16 +50,8 @@
                 "issues": "https://github.com/jasongrimes/php-paginator/issues",
                 "source": "https://github.com/jasongrimes/php-paginator/tree/master"
             },
-            "time": "2018-07-11T18:11:49+00:00"
+            "install-path": "../jasongrimes/paginator"
         }
     ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "dev": true
 }

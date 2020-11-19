@@ -1,5 +1,5 @@
 {
-    "name": "utilisateur/vaccination-project",
+    "name": "dylan/1-carnet-de-vaccination",
     "require": {
         "jasongrimes/paginator": "~1.0"
     }

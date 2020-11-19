@@ -1,7 +1,9 @@
 <?php
+session_start();
 include('../inc/pdo.php');
 include('../inc/functions.php');
 
+if($_SESSION['user']['role'] == 'admin') {
 
 include('inc/admin_header.php');
 
@@ -48,3 +50,7 @@ $contacts = $query->fetchAll();
 
 
 include('inc/admin_footer.php');
+
+} else {
+    redirect('404.php');
+}

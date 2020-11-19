@@ -56,17 +56,9 @@
 
             <!- Nav Item - Pages Collapse Menu -->
 
-
-            <!-- Nav Item - STATISTIQUES -->
-            <li class="nav-item">
-                <a class="nav-link" href="statistiques.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Statistiques</span></a>
-            </li>
-            <hr class="sidebar-divider d-none d-md-block">
             <!-- Nav Item - GESTION VACCINS-->
             <li class="nav-item">
-                <a class="nav-link" href="vaccins.php">
+                <a class="nav-link" href="admin_listing_vaccins.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Gérer les vaccins</span></a>
             </li>
@@ -80,7 +72,7 @@
             <hr class="sidebar-divider d-none d-md-block">
             <!-- Nav Item - GESTION UTILISATEURS-->
             <li class="nav-item">
-                <a class="nav-link" href="users.php">
+                <a class="nav-link" href="admin_listing_users.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Gérer les utilisateurs</span></a>
             </li>

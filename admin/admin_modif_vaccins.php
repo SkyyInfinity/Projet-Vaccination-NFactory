@@ -2,6 +2,8 @@
 session_start();
 include('../inc/pdo.php');
 include('../inc/functions.php');
+
+if($_SESSION['user']['role'] == 'admin') {
 $errors = array();
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
@@ -97,3 +99,6 @@ h1{
 </form>
 </div>
 <?php include('inc/admin_footer.php');
+} else {
+  redirect('404.php');
+}

@@ -1,12 +1,13 @@
 <?php 
-
+session_start();
 include('../inc/pdo.php');
 
 include('../inc/functions.php');
 
 $title = 'Admin';
 
-include('inc/admin_header.php');
+if($_SESSION['user']['role'] == 'admin') {
+    include('inc/admin_header.php');
 
 ?>
 
@@ -26,3 +27,8 @@ include('inc/admin_header.php');
 
 
 <?php include('inc/admin_footer.php'); ?>
+<?php
+} else {
+    redirect('404.php');
+}
+

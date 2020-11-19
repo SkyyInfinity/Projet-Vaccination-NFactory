@@ -2,6 +2,7 @@
 //session_start();
 include('../inc/pdo.php');
 include('../inc/functions.php');
+if($_SESSION['user']['role'] == 'admin') {
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
   $id = $_GET['id'];
@@ -15,18 +16,11 @@ $vaccin = $query->fetch();
 } else {
   redirect('404.php');
 }
-//debug($users);
-// pagination //
-
-// requete modifier, supprimer //
-
 include('inc/admin_header.php');?>
-
-
-
 
     <div class="wrap">
       <h1>Tableau des vaccins | MODERATION</h1>
+      
       <style>
         body{background-color: #d3d3d3;}
         h1{text-align: center;}
@@ -54,3 +48,6 @@ include('inc/admin_header.php');?>
           </div>
     </div>
 <?php include('inc/admin_footer.php');
+} else {
+  redirect('404.php');
+}

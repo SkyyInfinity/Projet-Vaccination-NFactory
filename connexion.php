@@ -55,7 +55,7 @@ include('inc/header.php');?>
     <h2>Connexion</h2>
     <hr>
 
-    <form id="formconnex" action="" method="post" novalidate>
+    <form id="formconnex" action="" method="post">
       <!-- EMAIL -->
       <div class="box-form">
         <!-- <label for="mail">E-mail<span>*</span></label> -->

@@ -8,27 +8,16 @@ $title = 'Mes vaccins';
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
   
-    $sql = "SELECT * FROM users WHERE id = :id";
+    $sql = "SELECT * FROM vaccins WHERE id = :id";
     $query = $pdo->prepare($sql);
     $query->bindValue(':id',$id,PDO::PARAM_INT);
     $query->execute();
-    $user = $query->fetch();
+    $vaccin = $query->fetch();
   
-    if(empty($user)) {
+    if(empty($vaccin)) {
         redirect('404.php');
     }
 }
-// JOINTURE USER/VACCINS
-$sql = "SELECT users.id, vaccins.nom, users_vaccins.date_vaccin
-        FROM users 
-        LEFT JOIN users_vaccins 
-        ON users.id = users_vaccins.id_user 
-        RIGHT JOIN vaccins 
-        ON users_vaccins.id_vaccin = vaccins.id 
-        WHERE users.id = $id";
-$query = $pdo->prepare($sql);
-$query->execute();
-$userVaccins = $query->fetchAll();
 
 include('inc/header.php');
 ?>
@@ -45,15 +34,15 @@ include('inc/header.php');
                 </ul>
             </nav>
             <div class="listing-box">
-                <div class="add-vaccins">
-                    <p><span>Vaccins ajoutés</span></p>
-                    <a href="add-vaccins.php?id=<?php echo $_SESSION['user']['id'] ?>">Ajouté un vaccin</a>
+                <div class="details-vaccin">
+                    <h3><span>Nom: </span><?php echo $vaccin['nom'] ?></h3>
+                    <h3><span>Maladie Ciblée: </span><?php echo $vaccin['maladie_ciblées'] ?></h3>
+                    <h3><span>Description: </span><?php echo $vaccin['details'] ?></h3>
+                    <h3><span>Informations: </span><?php echo $vaccin['presentation'] ?></h3>
                 </div>
-                <?php
-                 for ($i=0; $i<count($userVaccins) ; $i++) {
-                    echo '<p>' . $userVaccins[$i]['nom'] . '</p><span class="date-vaccin">Ajouté le: ' . formatDateWithoutMinute($userVaccins[$i]['date_vaccin']) . '</span>';
-                };
-                ?>
+                <div class="retour">
+                    <a class="btn" href="add-vaccins.php?id=<?php echo $_SESSION['user']['id'] ?>">Retour</a>
+                </div>
             </div>
         </div>
     </div>

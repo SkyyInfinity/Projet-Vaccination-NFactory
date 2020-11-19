@@ -39,5 +39,6 @@
             </div>
             <div class="border-gradient"></div>
         </footer>
+        <script src="./assets/js/hamburger.js"></script>
     </body>
 </html>

@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="assets/img/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/fontawesome/css/all.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
         <title>MyVaccine.org | <?php echo $title; ?></title>
     </head>
     <body>
@@ -15,11 +15,11 @@
         <header id="header">
             <div class="border-gradient"></div>
             <div class="wrap">
-                <nav>
+                <nav class="navigation">
                     <div class="logo">
                         <a href="index.php"><img class="logo_green" src="assets/img/myvaccine_x200.png" alt="Logo MyVaccine"></a>
                     </div>
-                    <ul>
+                    <ul id="nav-links" class="nav-links">
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <?php if(!empty($_SESSION['user'])) { ?>
@@ -30,12 +30,17 @@
                                 <li><a class="inscription" href="admin/admin_index.php">Admin</a></li>
                             <?php } ?> 
                             <li><a class="connexion" href="deconnexion.php">Déconnexion</a></li>
-                            <li><p class="welcome">Bonjour <span><?php echo $_SESSION['user']['prenom']; ?></span></p></li> 
                         <?php } else { ?>
                             <li><a class="connexion" href="connexion.php">Connexion</a></li>
                             <li><a class="inscription" href="inscription.php">Inscription</a></li>
-                        <?php } ?>
+                        <?php }; ?>
                     </ul>
+                    <?php if(!empty($_SESSION['user'])) { ?>
+                        <li><p class="welcome">Bonjour <span><?php echo $_SESSION['user']['prenom']; ?></span></p></li> 
+                    <?php } ?>
+                    <div id="hamburger" class="hamburger">
+                        <div class="line"><i class="fas fa-bars"></i></div>
+                    </div>
                 </nav>
             </div>
         </header>

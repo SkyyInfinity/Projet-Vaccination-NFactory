@@ -16,9 +16,10 @@
                     <div class="navigation-footer">
                         <nav>
                             <ul>
-                                <li><a href="index.php">Accueil</a></li>|
+                                <li><a href="index.php">Accueil</a></li> |
                                 <li class="mentions-border"><a href="mentions-legales.php">Mentions Légales</a></li>|
                                 <li><a href="contact.php">Contact</a></li>
+
                             </ul>
                             <div class="logo">
                                 <a href="index.php"><img src="assets/img/myvaccine_x200.png" alt="Logo MyVaccine"></a>

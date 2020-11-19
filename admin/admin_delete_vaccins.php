@@ -7,21 +7,21 @@ include('../inc/functions.php');
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
   $id = $_GET['id'];
 
-  $sql = "SELECT * FROM users WHERE id = :id";
+  $sql = "SELECT * FROM vaccins WHERE id = :id";
   $query = $pdo->prepare($sql);
   $query->bindValue(':id',$id,PDO::PARAM_INT);
   $query->execute();
-  $user = $query->fetch();
+  $vaccin = $query->fetch();
 
-  if(!empty($user)) {
+  if(!empty($vaccin)) {
     // préparation de la requête
-    $sql = "DELETE FROM users WHERE id=:id";
+    $sql = "DELETE FROM vaccins WHERE id=:id";
     //liaison du paramètre nommé
     $query = $pdo->prepare($sql);
     $query->bindValue(':id', $id , PDO::PARAM_INT);
     //execution de la requete
     $query->execute();
-    redirect('admin_listing_users.php');
+    redirect('admin_listing_vaccins.php');
 
   } else {
     redirect('404.php');

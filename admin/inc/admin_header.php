@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="assets/panel_admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
 
@@ -31,11 +32,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="-brand-text mx-3">ACCUEIL</div>
+                <div class="-brand-text mx-3">ACCUEIL ADMIN</div>
             </a>
 
             <!-- Divider -->
@@ -43,9 +44,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="admin_index.php">
+                <a class="nav-link" href="../index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tableau de bord</span></a>
+                    <span>RETOUR AU SITE </span></a>
             </li>
 
             <!-- Divider -->
@@ -55,41 +56,29 @@
 
             <!- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages de connexion </span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pages de connexion :</h6>
-                        <a class="collapse-item" href="login.html">Connexion</a>
-                        <a class="collapse-item" href="register.html">Inscription</a>
 
-                        <div class="collapse-divider"></div>
-
-
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
+            <!-- Nav Item - STATISTIQUES -->
             <li class="nav-item">
                 <a class="nav-link" href="statistiques.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Statistiques</span></a>
             </li>
-            <!-- Nav Item - Tables -->
             <hr class="sidebar-divider d-none d-md-block">
+            <!-- Nav Item - GESTION VACCINS-->
             <li class="nav-item">
                 <a class="nav-link" href="vaccins.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Gérer les vaccins</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
-
+            <!-- Nav Item - MESSAGERIE-->
+            <li class="nav-item">
+                <a class="nav-link" href="messagerie.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Messagerie</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Nav Item - GESTION UTILISATEURS-->
             <li class="nav-item">
                 <a class="nav-link" href="users.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -132,38 +121,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
                         </li>
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mettre php pour inscrire le nom et prénom de la personne connectée</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-
-                        </li>
-
                     </ul>
 
                 </nav>

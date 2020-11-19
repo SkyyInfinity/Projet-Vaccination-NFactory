@@ -3,19 +3,18 @@ session_start();
 include('../inc/pdo.php');
 include('../inc/functions.php');
 
-
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
   $id = $_GET['id'];
 
-  $sql = "SELECT * FROM users WHERE id = :id";
+  $sql = "SELECT * FROM contact WHERE id = :id";
   $query = $pdo->prepare($sql);
   $query->bindValue(':id',$id,PDO::PARAM_INT);
   $query->execute();
-  $user = $query->fetch();
+  $contactsupp = $query->fetch();
 
-  if(!empty($user)) {
+  if(!empty($contactsupp)) {
     // préparation de la requête
-    $sql = "DELETE FROM users WHERE id=:id";
+    $sql = "DELETE FROM contact WHERE id=:id";
     //liaison du paramètre nommé
     $query = $pdo->prepare($sql);
     $query->bindValue(':id', $id , PDO::PARAM_INT);
@@ -29,3 +28,5 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
 } else {
   redirect('404.php');
 }
+
+redirect('messagerie.php');

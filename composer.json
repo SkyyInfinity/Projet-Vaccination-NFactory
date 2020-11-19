@@ -1,0 +1,6 @@
+{
+    "name": "utilisateur/vaccination-project",
+    "require": {
+        "jasongrimes/paginator": "~1.0"
+    }
+}

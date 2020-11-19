@@ -1,26 +1,53 @@
 <?php
+
 //session_start();
+require('../vendor/autoload.php');
 include('../inc/pdo.php');
 include('../inc/functions.php');
+use JasonGrimes\Paginator;
+$errors = array();
+// pagination //
+//Nombre d'elements
+$itemsPerPage = 5;
+// Page courante
+$currentPage = 1;
+// Offset
+$offset = 0;
+
+if(!empty($_GET['page'])) {
+  $currentPage = $_GET['page'];
+  $offset = $currentPage * $itemsPerPage - $itemsPerPage;
+}
+$sql = "SELECT COUNT(id) FROM vaccins";
+$query = $pdo->prepare($sql);
+$query->execute();
+$totalItems = $query->fetchColumn();
+
+$urlPattern = 'admin_listing_vaccins.php?page=(:num)';
+
+$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
 
-
-$sql = "SELECT * FROM vaccins";
+/////////////////////// affichage des vaccins ///////////////////////////
+$sql = "SELECT * FROM vaccins ORDER BY id DESC LIMIT $offset,$itemsPerPage";
 $query = $pdo->prepare($sql);
 $query->execute();
 $vaccins = $query->fetchAll();
-//debug($users);
-// pagination //
-
-// requete modifier, supprimer //
 
 ?>
 
-
-
     <div class="wrap">
       <h1>Tableau des vaccins | MODERATION</h1>
+        <?php echo '<div class="pagination">' . $paginator . '</div>'; ?>
+
       <style>
+        .pagination{
+          text-align: center;
+        }
+        .pagination li{
+          display: inline-block;
+          margin: 0 10px;
+        }
         body{background-color: #d3d3d3;}
         h1{text-align: center;}
         .users{
@@ -33,7 +60,8 @@ $vaccins = $query->fetchAll();
           width:100%;
           margin: 0 auto;}
       </style>
-
+      <a href="admin_creation_vaccins.php">creation vaccin</a>
+      <!-- liste des vaccins  -->
       <?php foreach ($vaccins as $vaccin): ?>
 
           <div class="users">
@@ -49,3 +77,4 @@ $vaccins = $query->fetchAll();
 
       <?php endforeach; ?>
       </div>
+      <?php echo '<div class="pagination">' . $paginator . '</div>'; ?>

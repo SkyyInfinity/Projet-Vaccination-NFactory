@@ -22,8 +22,19 @@
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="contact.php">Contact</a></li>
-                        <li><a class="connexion" href="connexion.php">Connexion</a></li>
-                        <li><a class="inscription" href="inscription.php">Inscription</a></li>
+                        <?php if(!empty($_SESSION['user'])) { ?>
+                            <?php if(!empty($_SESSION['user']['role'] == 'abonne')) { ?>
+                                <li><a class="inscription" href="mon-compte.php?id=<?php echo $_SESSION['user']['id'] ?>">Mon compte</a></li>
+                            <?php } ?> 
+                            <?php if(!empty($_SESSION['user']['role'] == 'admin')) { ?>
+                                <li><a class="inscription" href="admin/admin_index.php">Admin</a></li>
+                            <?php } ?> 
+                            <li><a class="connexion" href="deconnexion.php">Déconnexion</a></li>
+                            <li><p class="welcome">Bonjour <span><?php echo $_SESSION['user']['prenom']; ?></span></p></li> 
+                        <?php } else { ?>
+                            <li><a class="connexion" href="connexion.php">Connexion</a></li>
+                            <li><a class="inscription" href="inscription.php">Inscription</a></li>
+                        <?php } ?>
                     </ul>
                 </nav>
             </div>

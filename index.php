@@ -2,7 +2,7 @@
 session_start();
 include('inc/pdo.php');
 include('inc/functions.php');
-
+//debug($_SESSION);
 $title = 'Accueil';
 
 include('inc/header.php');
@@ -12,7 +12,11 @@ include('inc/header.php');
     <img src="assets/img/accueil_hero_opacity.jpg" alt="Docteur qui montre des vaccins">
     <div class="info">
         <h1 class="info-title">Besoin d'une gestion de vos vaccins ou d'un rappel pour ne pas oublier ?</h1>
+        <?php if(!empty($_SESSION['user'])) { ?>
+            <a href="my-account.php" class="btn info-btn">Commencer maintenant</a>
+        <?php } else { ?>
         <a href="inscription.php" class="btn info-btn">S'inscrire maintenant</a>
+        <?php } ?>
     </div>
 </div>
 <section class="section-explications">

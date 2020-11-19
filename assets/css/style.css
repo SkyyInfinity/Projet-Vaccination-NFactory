@@ -113,10 +113,12 @@ h2 {
 #header nav ul {
   display: flex;
   justify-content: space-between;
-  width: 33%;
+  width: 43%;
 }
 
-#header nav ul li a {
+
+#header nav ul li a{
+
   text-decoration: none;
   color: #474441;
   font-weight: 500;
@@ -126,8 +128,8 @@ h2 {
   border-radius: 20px;
 }
 
-#header nav ul li a:hover {
-  opacity: .7;
+#header nav ul li a:hover{
+   opacity: .7;
 }
 
 #header nav ul li a.inscription {
@@ -235,7 +237,17 @@ h2 {
   margin-bottom: 20px;
 }
 
+#content .inscription-content .congrats-wrap .congrats-redirect {
+  font-size: 1.2em;
+  padding: 30px 20px;
+  color: green;
+  background-color: white;
+  border-radius: 70px;
+  margin-bottom: 45px;
+}
+
 form input[type="text"], input[type="email"], input[type="password"] {
+  color: #474441;
   padding: 1%;
   outline: none;
   border: none;
@@ -295,10 +307,6 @@ textarea {
   font-weight: 900;
 }
 
-/* mesagerie back */
-
-
-
 #content .connexion-content {
   background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
   padding-top: 7%;
@@ -318,6 +326,236 @@ textarea {
 #content .connexion-content .btn-forgot a:hover {
   opacity: .7;
 }
+
+/* MON COMPTE */
+#content section.moncompte-section {
+  background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+  padding-top: 7%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+#content section.moncompte-section .moncompte-box {
+  background-color: #f7f7f7;
+  border-radius: 35px;
+  padding: 2% 0;
+}
+#content section.moncompte-section .moncompte-box nav {
+  display: flex;
+  justify-content: center;
+}
+#content section.moncompte-section .moncompte-box nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  border-bottom: 1px #474441 solid;
+}
+#content section.moncompte-section .moncompte-box nav ul li {
+  padding: 25px 0;
+  border-radius: 35px;
+}
+#content section.moncompte-section .moncompte-box nav ul li a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #474441;
+  font-size: 1.3em;
+  font-weight: 500;
+  border-radius: 35px;
+  border: 2px #474441 solid;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box nav ul li a:hover {
+  color: white;
+  background-color: #615d59;
+  border: 2px #615d59 solid;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.active {
+  color: white;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.danger{
+  color: #bb2205;
+  border: 2px #bb2205 solid;
+  background-color: #f7f7f7;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.danger.actived{
+  color: white;
+  background-color: #bb2205;
+  border: 2px #bb2205 solid;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box nav ul li a.danger:hover, a.danger.actived:hover {
+  color: white;
+  background-color: red;
+  border: 2px red solid;
+}
+#content section.moncompte-section .moncompte-box .listing-box {
+  padding: 2% 0;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+#content section.moncompte-section .moncompte-box .listing-box p {
+  font-size: 1.3em;
+  line-height: 2em;
+}
+#content section.moncompte-section .moncompte-box .listing-box p span {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  border: 2px solid;
+  border-radius: 35px;
+}
+#content section.moncompte-section .moncompte-box .listing-box a {
+  display: block;
+  font-size: 1.1em;
+  margin: 5% 20%;
+}
+#content section.moncompte-section .moncompte-box .listing-box a.danger-confirme {
+  background-color: #bb2205;
+  border: 2px #bb2205 solid;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: .2s;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: .2s;
+}
+#content section.moncompte-section .moncompte-box .listing-box a.danger-confirme:hover {
+  background-color: red;
+  border: 2px red solid;
+  color: white;
+}
+
+/* MENTIONS LEGALES */
+#content .mentionsLegales{
+  background: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+  padding: 100px;
+  line-height: 1.3em;
+  width: 100%;
+  margin: auto;
+  text-align: justify;
+  /* position: fixed; */
+
+}
+.wrapme {
+  /* width: 1000px; */
+  padding-top : 0px;
+  /* margin: 0 auto; */
+
+}
+ #content .mentionsLegales h2{
+  font-size: 2em;
+  font-weight: 1.5em;
+}
+#content .mentionsLegales .head{
+  /* padding: -2px 0 10px 0; */
+  /* position: relative; */
+  padding: 10px 0 5px 0;
+  text-align: center;
+  width: 84%;
+  margin: auto;
+
+
+
+  /* width: 50%; */
+}
+
+#content .mentionsLegales .head hr {
+  border: none;
+  background-color: white;
+  height: 5px;
+  width: 270px;
+  text-align: center;
+  margin: 50px auto 0px auto;
+
+}
+#content .wrapme {
+  padding-top: 40px;
+}
+#content .wrapme .retour {
+  /* margin: -20px  auto 10px auto; */
+
+  width: 280px;
+  margin: auto;
+  text-align: center;
+  opacity: 1;
+  transition: .2s;
+
+}
+#content .mentionsLegales .retour a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #69e063;
+  border: 2px solid #69e063;
+  border-radius: 5px;
+  transition: .2s;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: white;
+
+}
+#content .mentionsLegales  .retour:hover{
+  border: none;
+  width: 192px;
+  opacity: .5;
+  background-color: #5abf55;
+}
+#content .wrapme h2{
+  font-size: 1.9em;
+  padding-top: 20px;
+  margin: 20px 0 20px 0;
+}
+#content .wrapme p{
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #2b332d;
+}
+#content .wrapme article ul li span {
+  font-weight: bold;
+}
+#content .wrapme article ul li span:hover {
+  color: white;
+  transition: .3s;
+
+}
+#content .wrapme .tableau {
+  padding-top: 40px;
+  margin-left: 40px;
+  text-align: center;
+}
+#content .wrapme .tableau ul{
+  padding-top: 10px;
+
+}
+#content .wrapme .tableau ul li a{
+  padding-top: 40px;
+  color: white;
+  transition: .2s;
+  padding: 10px;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+#content .wrapme .tableau ul li a:hover {
+  opacity: .7;
+  /* transition: .2s; */
+
+}
+#content .wrapme .lien a{
+  color: white;
+  transition: .2s;
+  text-decoration: none;
+}
+#content .wrapme .lien a:hover{
+  opacity: .5;
+}
+
+
+
+
+
 
 /* FOOTER */
 
@@ -568,6 +806,9 @@ textarea {
   }
   #content .info {
     top: 31%;
+  }
+  .mentionsLegales {
+    width: 100%;
   }
 }
 

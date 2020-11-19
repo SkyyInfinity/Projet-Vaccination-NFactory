@@ -40,21 +40,46 @@ if (!empty($_POST['submitted'])) {
         $errors['password'] = 'Le mot de passe est incorrect.';
       }
     }else {
-      $errors['email'] = 'Une erreur est survenue, veuillez réessayer.';
+      $errors['password'] = 'Une erreur est survenue, veuillez réessayer.';
     }
   } else {
-    $errors['email'] = 'Veuillez renseigner les champs.';
+    $errors['password'] = 'Veuillez renseigner les champs.';
   }
 }
 
 include('inc/header.php');?>
+
+<h1>Connexion</h1>
+
+<form id="formconnex" action="" method="post">
+  <label for="mail">E-mail *</label>
+  <input type="text" name="mail" value="<?php if (!empty($_POST['mail'])) {
+    echo $_POST['mail'];
+  } ?>">
+  <span class="error"><?php if (!empty($errors['mail'])) {
+    echo $errors['mail'];
+  } ?></span>
+
+  <label for="mail">Mot de passe *</label>
+  <input type="password" name="password" value="<?php if (!empty($_POST['password'])) {
+    echo $_POST['password'];
+  } ?>">
+  <span class="error"><?php if (!empty($errors['password'])) {
+    echo $errors['password'];
+  } ?></span>
+
+
+  <input type="submit" name="submitconnex" value="Je me connecte">
+</form>
+<a href="forgotPassword.php">Mot de passe Oublié</a>
+
 <section class="connexion-content">
   <div class="wrap">
 
     <h2>Connexion</h2>
     <hr>
 
-    <form id="formconnex" action="" method="post">
+    <form id="formconnex" action="" method="post" novalidate>
       <!-- EMAIL -->
       <div class="box-form">
         <!-- <label for="mail">E-mail<span>*</span></label> -->

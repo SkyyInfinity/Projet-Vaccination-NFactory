@@ -13,7 +13,9 @@
 
     <!-- Custom fonts for this template-->
     <link href="assets/panel_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="assets/panel_admin/css/sb-admin-2.min.css" rel="stylesheet">
@@ -54,36 +56,41 @@
             <!- Nav Item - Pages Collapse Menu -->
 
 
-                <!-- Nav Item - STATISTIQUES -->
-                <li class="nav-item">
-                    <a class="nav-link" href="statistiques.php">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Statistiques</span></a>
-                </li>
-                <hr class="sidebar-divider d-none d-md-block">
-                <!-- Nav Item - GESTION VACCINS-->
-                <li class="nav-item">
-                    <a class="nav-link" href="vaccins.php">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Gérer les vaccins</span></a>
-                </li>
-                <hr class="sidebar-divider d-none d-md-block">
-                <!-- Nav Item - MESSAGERIE-->
-                <li class="nav-item">
-                    <a class="nav-link" href="messagerie.php">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Messagerie</span></a>
-                </li>
-                <hr class="sidebar-divider d-none d-md-block">
-                <!-- Nav Item - GESTION UTILISATEURS-->
-                <li class="nav-item">
-                    <a class="nav-link" href="users.php">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Gérer les utilisateurs</span></a>
-                </li>
+            <!-- Nav Item - STATISTIQUES -->
+            <li class="nav-item">
+                <a class="nav-link" href="statistiques.php">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Statistiques</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Nav Item - GESTION VACCINS-->
+            <li class="nav-item">
+                <a class="nav-link" href="vaccins.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Gérer les vaccins</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Nav Item - MESSAGERIE-->
+            <li class="nav-item">
+                <a class="nav-link" href="messagerie.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Messagerie</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Nav Item - GESTION UTILISATEURS-->
+            <li class="nav-item">
+                <a class="nav-link" href="users.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Gérer les utilisateurs</span></a>
+            </li>
 
-                <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block">
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -109,11 +116,11 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            </li<>
-
+                        </li>
                     </ul>
 
                 </nav>

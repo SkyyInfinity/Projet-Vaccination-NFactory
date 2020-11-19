@@ -30,8 +30,9 @@ $contacts = $query->fetchAll();
             <td><?= $contact['created_at']; ?></td>
             <td>
 
-                <!-- la fonction voir le message en détail  -->
-                <a href="voir.php?id=<?= $contact['id'] ?>" target="_blank">Voir</a>
+                
+            <!-- la fonction voir le message en détail  -->
+                <a href="voir.php?id=<?= $contact['id'] ?>">Voir</a>
                 <!-- fonction effacer  -->
                 <a href="supprimer.php?id=<?= $contact['id'] ?>">Effacer</a>
                 

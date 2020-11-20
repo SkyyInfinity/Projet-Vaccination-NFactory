@@ -104,7 +104,6 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 43%;
-  z-index: -1;
 }
 #header nav ul li a {
   text-decoration: none;
@@ -600,6 +599,9 @@ box-shadow: 0px 0px 8px 0px rgba(117,117,117,1);
   }
 }
 @media screen and (max-width: 1200px) {
+  #header nav {
+    z-index: 1;
+  }
   #header nav ul {
     flex-direction: column;
     justify-content: center;
@@ -611,6 +613,7 @@ box-shadow: 0px 0px 8px 0px rgba(117,117,117,1);
     background-color: white;
     transform: translateY(-140%);
     transition: transform .2s ease-out;
+    z-index: 15;
     
   }
   #header nav ul li a {
@@ -637,7 +640,7 @@ box-shadow: 0px 0px 8px 0px rgba(117,117,117,1);
     padding-top: 190px;
   }
   #header nav ul.nav-links-active {
-    transform: translateY(-10%);
+    transform: translateY(-5%);
   }
 }
 @media screen and (max-width: 900px) {

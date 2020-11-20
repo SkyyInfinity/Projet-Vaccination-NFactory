@@ -41,5 +41,6 @@
             <div class="border-gradient"></div>
         </footer>
         <script src="./assets/js/hamburger.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     </body>
 </html>

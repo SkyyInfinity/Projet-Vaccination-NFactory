@@ -39,7 +39,7 @@
                         <li><p class="welcome">Bonjour <span><?php echo $_SESSION['user']['prenom']; ?></span></p></li> 
                     <?php } ?>
                     <div id="hamburger" class="hamburger">
-                        <div class="line"><i class="fas fa-bars"></i></div>
+                        <div class="line"><i id="modifier_class" class="fas fa-bars"></i></div>
                     </div>
                 </nav>
             </div>

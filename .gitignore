@@ -1,6 +1,6 @@
 config.php
-vendorrrrrrrrrrrrrrrrrrrrrrr/
+vendor/
 .DS_Store
 composer.phar
 README.md
-inc/pdooooooooooooooo.php
+inc/pdo.php

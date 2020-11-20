@@ -14,13 +14,14 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
     $query->execute();
     $voir_message = $query->fetch();
 
+    include('inc/admin_header.php');
 ?>
     <style>
         body{
-            background-image: linear-gradient(90deg, #69e063 1%, #4fffed 100%);
+            background-color: #d3d3d3;
         }
     </style>
-        <table style="width:100%;text-align:center">
+        <table style="width:100%;text-align:center;">
             <tr>
                 <th>Expéditeur</th>
                 <th>Email</th>
@@ -49,6 +50,7 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
  
     
 <?php
+include('inc/admin_footer.php');
 } else {
     redirect('404.php');
 }

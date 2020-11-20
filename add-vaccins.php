@@ -79,7 +79,7 @@ include('inc/header.php');
                     <form action="" method="post">
                         <?php foreach($vaccins as $vaccin) { ?>
                             <div class="checkbox">
-                                <input type="checkbox" id="vaccin" name="vaccin">
+                                <input type="checkbox" id="vaccin" name="vaccin" value="">
                                 <label for="vaccin"><?php echo $vaccin['nom']; ?><a href="details-vaccins.php?id=<?php echo $vaccin['id']; ?>">Voir</a></label>
                             </div>
                         <?php } ?>

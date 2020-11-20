@@ -5,38 +5,43 @@ require('../vendor/autoload.php');
 include('../inc/pdo.php');
 include('../inc/functions.php');
 use JasonGrimes\Paginator;
+$errors = array();
+$title = 'liste des vaccins';
 
 if($_SESSION['user']['role'] == 'admin') {
-$errors = array();
-//////////////////////////////////// pagination ////////////////////////////
+  
+  //////////////////////////////////// pagination ////////////////////////////
 
-//Nombre d'elements
-$itemsPerPage = 6;
-// Page courante
-$currentPage = 1;
-// Offset
-$offset = 0;
+  //Nombre d'elements
+  $itemsPerPage = 6;
+  // Page courante
+  $currentPage = 1;
+  // Offset
+  $offset = 0;
 
-if(!empty($_GET['page'])) {
-  $currentPage = $_GET['page'];
-  $offset = $currentPage * $itemsPerPage - $itemsPerPage;
+  if(!empty($_GET['page'])) {
+    $currentPage = $_GET['page'];
+    $offset = $currentPage * $itemsPerPage - $itemsPerPage;
+  }
+  $sql = "SELECT COUNT(id) FROM vaccins";
+  $query = $pdo->prepare($sql);
+  $query->execute();
+  $totalItems = $query->fetchColumn();
+
+  $urlPattern = 'admin_listing_vaccins.php?page=(:num)';
+
+  $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+
+  /////////////////////////////////////////////////////////////////////////
+  /////////////////////// affichage des vaccins ///////////////////////////
+  ////////////////////////////////////////////////////////////////////////
+  $sql = "SELECT * FROM vaccins ORDER BY id DESC LIMIT $offset,$itemsPerPage";
+  $query = $pdo->prepare($sql);
+  $query->execute();
+  $vaccins = $query->fetchAll();
+} else {
+  redirect('404.php');
 }
-$sql = "SELECT COUNT(id) FROM vaccins";
-$query = $pdo->prepare($sql);
-$query->execute();
-$totalItems = $query->fetchColumn();
-
-$urlPattern = 'admin_listing_vaccins.php?page=(:num)';
-
-$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
-
-/////////////////////////////////////////////////////////////////////////
-/////////////////////// affichage des vaccins ///////////////////////////
-////////////////////////////////////////////////////////////////////////
-$sql = "SELECT * FROM vaccins ORDER BY id DESC LIMIT $offset,$itemsPerPage";
-$query = $pdo->prepare($sql);
-$query->execute();
-$vaccins = $query->fetchAll();
 /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 include('inc/admin_header.php');?>
@@ -84,6 +89,3 @@ include('inc/admin_header.php');?>
       <?php endforeach; ?>
       </div>
     <?php  include('inc/admin_footer.php');
-} else {
-  redirect('404.php');
-}

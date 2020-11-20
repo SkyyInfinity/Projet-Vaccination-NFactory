@@ -36,7 +36,7 @@ $errors = array();
 
 // Traitement du formualire
 
-
+include('inc/admin_header.php');
 ?>
 <h1>Creation du vaccin</h1>
 <style>
@@ -97,3 +97,5 @@ h1{
   </div>
 </form>
 </div>
+<?php 
+include('inc/admin_footer.php');

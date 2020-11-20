@@ -3,6 +3,7 @@
 session_start();
 include('inc/pdo.php');
 include('inc/functions.php');
+$title = 'Réinitialiser mot de passe';
 $errors = array();
 
 if (!empty($_POST['submitted'])) {
@@ -72,29 +73,32 @@ include('inc/header.php');
   .reinit{margin-top: 8px;}
   .reinitialisation-box {padding-top: 8px; }
 </style>
-<h1 class="reinit">Réinitialisation mot de passe</h1>
-<div class="reinitialisation-box">
-  <form class="reinitform" action="" method="post">
-    <div class="form3">
-      <label for="mdp">Mot de passe *</label>
-      <input type="password" name="password1"  id="mdp" value="<?php if (!empty($_POST['password1'])){echo $_POST['password1'];} ?>">
-      <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
-    </div>
+<section class="connexion-content">
+  <div class="wrap">
+    <h2 class="reinit">Réinitialisation mot de passe</h2>
+    <hr>
+    <div class="reinitialisation-box">
+      <form class="reinitform" action="" method="post">
+        <div class="form3">
+          <input placeholder="&#xf0e0 Mot de passe" type="password" name="password1"  id="mdp" value="<?php if (!empty($_POST['password1'])){echo $_POST['password1'];} ?>">
+          <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
+        </div>
 
-    <div class="form3">
-      <label for="mdp2">Confirmation Mot de passe *</label>
-      <input type="password" name="password2"  id="mdp2" value="<?php if (!empty($_POST['password2'])){echo $_POST['password2'];} ?>">
-      <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
-    </div>
-    <div>
-      <input type="submit" name="submitted" value="Changer le mot de Passe">
-      <input type="submit" name="annuler" value="Annuler">
-      <?php if (!empty($_POST['annuler'])) {redirect('forgotPassword.php');}
-       ?>
+        <div class="form3">
+          <input placeholder="&#xf0e0 Confirmation du mot de passe" type="password" name="password2"  id="mdp2" value="<?php if (!empty($_POST['password2'])){echo $_POST['password2'];} ?>">
+          <span class="error"><?php if (!empty($errors['password'])){echo $errors['password'];} ?></span>
+        </div>
+        <div>
+          <input class="btn-contrast" type="submit" name="submitted" value="Changer le mot de Passe">
+          <input class="btn-contrast" type="submit" name="annuler" value="Annuler">
+          <?php if (!empty($_POST['annuler'])) {redirect('forgotPassword.php');}
+          ?>
 
+        </div>
+      </form>
     </div>
-  </form>
-</div>
+  </div>
+</section>
 
 
 

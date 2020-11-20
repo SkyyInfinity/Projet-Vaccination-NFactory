@@ -39,13 +39,17 @@ $query->execute();
 $userVaccins = $query->fetchAll();
 
 if (!empty($_POST['submitted'])) {
-    $idVaccin = $_POST['vaccin'];
+    if ($_POST['vaccin'] == on)
+    {$capt1 = 1;}
+    else
+    {$capt1 = 0;}
+
     if(!empty($idVaccin)) {
       // request
       $sql = "INSERT INTO users_vaccins(id_user, id_vaccin, date_vaccin) VALUES (:id_user,:id_vaccin, NOW())";
       $query = $pdo->prepare($sql);
       $query->bindValue(':id_user',$id,PDO::PARAM_INT);
-      $query->bindValue(':id_vaccin',$idVaccin,PDO::PARAM_INT);
+      $query->bindValue(':id_vaccin',$capt1,PDO::PARAM_INT);
       $query->execute();
 
       $userID = $_SESSION['user']['id'];

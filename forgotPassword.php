@@ -3,6 +3,7 @@
 session_start();
 include('inc/pdo.php');
 include('inc/functions.php');
+$title = 'Mot de passe oublié';
 $errors = array();
 
 if (!empty($_POST['submitted'])) {
@@ -43,22 +44,24 @@ if (!empty($_POST['submitted'])) {
 
 
 include('inc/header.php');?>
-<h1>Récuperation mot de passe</h1>
-<p>Indiquez l'adresse E-mail associée à votre Espace client pour générer un nouveau mot de passe</p>
-<form class="forgotPassword" action="" method="post">
-  <label for="email">E-mail *</label>
-  <input type="text" name="email" placeholder="Votre adresse E-mail" value="<?php if (!empty($_POST['email'])) {
-    echo $_POST['email'];
-  } ?>">
-  <span class="error" style="color: red;"><?php if (!empty($errors['email'])) {
-    echo $errors['email'];
-  } ?></span>
-
-  <input type="submit" name="submitted" value="Valider">
-  <input type="submit" name="resetted" value="Annuler">
-  <?php if (!empty($_POST['resetted'])) {redirect('connexion.php');}
-   ?>
-</form>
+<section class="connexion-content">
+  <div class="wrap">
+    <h2>Récuperation mot de passe</h2>
+    <hr>
+    <p>Indiquez l'adresse E-mail associée à votre Espace client pour générer un nouveau mot de passe</p>
+    <form class="forgotConnex" action="" method="post">
+    <!-- EMAIL -->
+    <div class="box-form">
+      <input type="text" name="email" placeholder="&#xf0e0 adresse E-mail" value="<?php if (!empty($_POST['email'])) {echo $_POST['email'];} ?>">
+      <span class="error" style="color: red;"><?php if (!empty($errors['email'])) {echo $errors['email'];} ?></span>
+    </div>
+      <input class="btn-contrast" type="submit" name="submitted" value="Valider">
+      <input class="btn-contrast" type="submit" name="resetted" value="Annuler">
+      <?php if (!empty($_POST['resetted'])) {redirect('connexion.php');}
+      ?>
+    </form>
+  </div>
+</section>
 
 <?php
 include('inc/footer.php');?>
